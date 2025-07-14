@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import type {IdentificationType} from '../../domain/entities/IdentificationType';
-import type {User} from '../../domain/entities/User';
-import styles from './UserForm.module.css';
+import type {Device} from '../../domain/entities/Device';
+import styles from './RegisterDeviceForm.module.css';
 
-
-interface UserFormProps {
+interface RegisterDeviceFormProps {
     identificationTypes: IdentificationType[];
-    onSubmit: (user: User) => void;
+    onSubmit: (device: Device) => void;
     loading: boolean;
     error: string | null;
 }
@@ -23,7 +22,7 @@ interface FormState {
     descripcion: string;
 }
 
-export const UserForm: React.FC<UserFormProps> = ({identificationTypes, onSubmit, loading, error}) => {
+export const RegisterDeviceForm: React.FC<RegisterDeviceFormProps> = ({identificationTypes, onSubmit, loading, error}) => {
     const [form, setForm] = useState<FormState>({
         identificacion: '',
         firstName: '',
@@ -72,10 +71,9 @@ export const UserForm: React.FC<UserFormProps> = ({identificationTypes, onSubmit
     ];
     const maxDescripcion = 254;
 
-
     return (
         <>
-            <div className={styles['form-title']}>Registro de artículos</div>
+            <div className={styles['form-title']}>Registro de dispositivos</div>
             <form className={styles['form-container']} onSubmit={handleSubmit}>
                 <div className={styles['form-row']}>
                     <label className={styles['form-label']} htmlFor="firstName">Nombres:</label>

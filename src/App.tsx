@@ -1,8 +1,8 @@
 import './App.css';
-import { FormPage } from './presentation/pages/FormPage';
+import { RegisterDevicePage } from './presentation/pages/RegisterDevicePage';
 
 function App() {
-  return <FormPage />;
+  return <RegisterDevicePage />;
 }
 
 export default App
