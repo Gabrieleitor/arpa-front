@@ -4,8 +4,8 @@ import { IdentificationTypeService } from '../../application/services/Identifica
 
 interface UseIdentificationTypesResult {
   identificationTypes: IdentificationType[];
-  loading: boolean;
-  error: string | null;
+  identiLoading: boolean;
+  identiError: string | null;
 }
 
 export function useIdentificationTypes(service: IdentificationTypeService): UseIdentificationTypesResult {
@@ -21,5 +21,5 @@ export function useIdentificationTypes(service: IdentificationTypeService): UseI
       .finally(() => setLoading(false));
   }, [service]);
 
-  return { identificationTypes, loading, error };
+  return { identificationTypes, identiLoading: loading, identiError: error };
 }

@@ -3,9 +3,9 @@ export interface Device {
     firstName: string;
     lastName: string;
     identificationType: number;
-    articleType: string;
-    marca: string;
-    bond: string;
+    articleType: number;
+    make: number;
+    bond: number;
     serial: string;
     description: string;
 }
